@@ -6,7 +6,7 @@ const Pager = ({ allUsersCount }) => {
   const pageCount = Math.ceil(allUsersCount / 50);
 
   let links = [];
-  for (let i = 0; i <= pageCount; i++) {
+  for (let i = 0; i < pageCount; i++) {
       links.push(`#view=users&idx=${i}`);
   }
 
