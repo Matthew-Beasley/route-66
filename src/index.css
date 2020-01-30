@@ -2,3 +2,23 @@ body {
   margin: 3rem;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
 }
+
+a {
+  padding: 10px;
+  margin: 0rem 1rem 0rem 1rem;
+}
+
+a.selected {
+  border: 1px solid black;
+}
+
+.pager-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.pager-links > div {
+  width: 2rem;
+}

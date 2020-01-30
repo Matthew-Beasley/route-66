@@ -1,35 +1,28 @@
 import React, { useEffect, useState } from 'react';
+import qs from 'qs';
 import Nav from './Nav';
 import Home from './Home';
 import Users from './Users';
-import { fetchUsers } from './Fetch';
 
 
 function App() {
+  const getHash = () => { return window.location.hash.slice(1) }
 
-  let allUserCount = 0;
-  const [users, setUsers] = useState([])
-  const [allUsersCount, setAllUsersCount] = useState(0);
+  const [params, setParams] = useState(qs.parse(getHash()));
 
   useEffect(() => {
-    fetchUsers()
-      .then(response => {
-        setAllUsersCount(response.count);
-        setUsers(response.users)
-        console.log(response)
-      });
-  },[])
+    window.addEventListener('hashchange', () => {
+      setParams(qs.parse(getHash()));
+    })
+  }, []);
 
-  console.log(users)
-  console.log(allUsersCount)
+  console.log(params)
 
   return (
     <div className="App">
-      <nav>
-        <a href={`#/home`} >Home</a>
-        <a href={`#/users`}>Users</a>
-      </nav>
-      
+      <Nav params={params} />
+      {params.view === '' && <Home />}
+      {params.view === 'users' && <Users params={params} />}
     </div>
   );
 }
