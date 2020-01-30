@@ -6,15 +6,16 @@ const Users = ({params, setIdx, idx}) => {
   const [users, setUsers] = useState([]);
   const [allUsersCount, setAllUsersCount] = useState(0); //?????? need state here?
 
-
+  useEffect(() => {
     if (!params.idx) {
       params.idx = idx;
     }
     else {
       setIdx(params.idx);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
 
-console.log(idx)
   console.log(params)
 
   useEffect(() => {
