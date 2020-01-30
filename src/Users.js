@@ -14,7 +14,7 @@ const Users = ({params, setIdx, idx}) => {
       setIdx(params.idx);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+  }, [params.idx])
 
   useEffect(() => {
     fetchUsers(params.idx)
