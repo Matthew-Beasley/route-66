@@ -17,6 +17,13 @@ a.selected {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  border-bottom: 1px solid gray;
+}
+
+ul {
+  list-style-type: none;
+  margin: 1rem 1rem 0rem 5rem;
+  padding: 0;
 }
 
 .pager-links > div {

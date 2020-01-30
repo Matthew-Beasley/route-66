@@ -31,7 +31,7 @@ const Users = ({params, setIdx, idx}) => {
       <Pager allUsersCount={allUsersCount} />
       <ul>
         {users.map((user, idx) => {
-          return <li key={idx}>{user.fullName}</li>
+          return <li key={idx}><a href={`#view=detail&userid=${user.id}`}>{user.fullName}</a></li>
       })}
       </ul>
     </div>  
