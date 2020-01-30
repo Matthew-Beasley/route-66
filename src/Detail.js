@@ -10,8 +10,6 @@ const Detail = ({params}) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-
-
   return (
     <div>
       <h2>{user.fullName}</h2>

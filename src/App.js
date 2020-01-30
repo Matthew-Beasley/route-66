@@ -17,8 +17,6 @@ function App() {
     })
   }, []);
 
-  console.log(params)
-
   return (
     <div className="App">
       <Nav params={params} idx={idx} />
