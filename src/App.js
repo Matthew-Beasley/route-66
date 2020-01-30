@@ -7,8 +7,8 @@ import Users from './Users';
 
 function App() {
   const getHash = () => { return window.location.hash.slice(1) }
-
   const [params, setParams] = useState(qs.parse(getHash()));
+  const [idx, setIdx] = useState(0)
 
   useEffect(() => {
     window.addEventListener('hashchange', () => {
@@ -16,13 +16,11 @@ function App() {
     })
   }, []);
 
-  console.log(params)
-
   return (
     <div className="App">
-      <Nav params={params} />
+      <Nav params={params} idx={idx} />
       {params.view === '' && <Home />}
-      {params.view === 'users' && <Users params={params} />}
+      {params.view === 'users' && <Users params={params} idx={idx} setIdx={setIdx} />}
     </div>
   );
 }
